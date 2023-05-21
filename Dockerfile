@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
     pip install --upgrade pip && \
     pip install -r requirements.txt && \
 # try protobuf here if still fails on arm64
-    pip install --force-reinstall hnswlib protobuf
+    pip install --force-reinstall hnswlib protobuf==3.20.*
 
 # REST API
 EXPOSE 7437
