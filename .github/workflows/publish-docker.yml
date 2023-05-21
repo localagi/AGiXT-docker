@@ -26,5 +26,5 @@ jobs:
         type=schedule
         type=ref,event=branch
         type=semver,pattern={{version}}
-#      platforms: linux/amd64,linux/arm64/v8
+      platforms: linux/amd64,linux/arm64/v8
     secrets: inherit
