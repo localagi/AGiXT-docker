@@ -16,7 +16,7 @@ on:
 jobs:
 
   build-agixt:
-    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@v2
+    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@main
     with:
       registry-repo-name: agixt
       context-repository: Josh-XT/AGiXT
