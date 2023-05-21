@@ -1,0 +1,10 @@
+services:
+  backend:
+    restart-always: true
+    volumes:
+      - ./agixt:/agixt
+  backend-streamlit:
+    restart-always: true
+    volumes:
+      - ./agixt:/agixt
+

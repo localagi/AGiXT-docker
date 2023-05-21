@@ -22,9 +22,6 @@ See [Releases](../../releases)
 
 ## Run
 
-Short description what it does
-The following wil get all **This-project** images and do something
-
 * get `docker-compose.yml` (clone repo, copy or else) 
 * Run `docker compose --profile all up`
 * open/refresh `http://localhost:8501` (streamlit)
@@ -41,6 +38,15 @@ Prepend, e.g. `AGiXT_VERSION=1.1.57-beta`
 
 ### Cleanup
 `docker compose rm`
+
+## Run a dev environment
+
+Use `docker-compose.dev.yaml` as an additon to 
+* directly mount source code into the container (run your modifications)
+* automatically restart the container on error
+
+
+Run `docker compose -f docker-compose.yaml -f docker-compose.dev.yaml --profile all up`
 
 ## Contributing
 
