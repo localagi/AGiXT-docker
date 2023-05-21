@@ -24,4 +24,5 @@ EXPOSE 3000
 ENV PATH="/usr/local/bin:$PATH"
 ENV LD_PRELOAD=libgomp.so.1
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7437"]
+ENTRYPOINT ["uvicorn", "app:app"]
+CMD ["--host", "0.0.0.0", "--port", "7437"]
