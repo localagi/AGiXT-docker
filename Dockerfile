@@ -16,13 +16,7 @@ RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
 # try protobuf here if still fails on arm64
     pip install --force-reinstall hnswlib protobuf==3.20.*
 
-# REST API
-EXPOSE 7437
-# STREAMLIT 
-EXPOSE 3000 
-
 ENV PATH="/usr/local/bin:$PATH"
 ENV LD_PRELOAD=libgomp.so.1
 
 ENTRYPOINT ["uvicorn", "app:app"]
-CMD ["--host", "0.0.0.0", "--port", "7437"]

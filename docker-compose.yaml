@@ -14,6 +14,7 @@ services:
   backend:
     image: localagi/agixt:main
     init: true
+    command: ["--host", "0.0.0.0", "--port", "7437"]
     ports:
       - "7437:7437"
     volumes:
@@ -24,8 +25,7 @@ services:
 
   backend-streamlit:
     image: localagi/agixt:main
-    entrypoint: [ "streamlit", "run", "streamlit.py" ]
-    command: ""
+    entrypoint: [ "streamlit", "run", "Main.py" ]
     init: true
     ports:
       - "8501:8501"
