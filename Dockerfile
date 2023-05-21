@@ -7,7 +7,7 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 # leave python deps when BASE_IMAGE changes
     apt-get install -y --no-install-recommends git build-essential g++ libgomp1 ffmpeg python3 python3-pip python3-dev 
 
-COPY --link . /agixt
+COPY --link agixt/ /agixt
 WORKDIR /agixt
 
 RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
@@ -16,8 +16,10 @@ RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
 # try protobuf here if still fails on arm64
     pip install --force-reinstall hnswlib protobuf
 
-EXPOSE 7437 # REST API
-EXPOSE 3000 # STREAMLIT
+# REST API
+EXPOSE 7437
+# STREAMLIT 
+EXPOSE 3000 
 
 ENV PATH="/usr/local/bin:$PATH"
 ENV LD_PRELOAD=libgomp.so.1
