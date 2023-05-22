@@ -13,7 +13,7 @@ WORKDIR /agixt
 RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
     pip install --upgrade pip && \
     pip install -r requirements.txt && \
-    pip install password_generator && \
+    pip install random-password-generator && \
 # try protobuf here if still fails on arm64
     pip install --force-reinstall hnswlib protobuf==3.20.*
 
