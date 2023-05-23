@@ -2,7 +2,7 @@
 
 Sophisticated docker builds for parent project [Josh-XT/AGiXT](https://github.com/Josh-XT/AGiXT). 
 
-![example workflow](https://github.com/localagi/AGiXT-docker/actions/workflows/publish-docker.yml/badge.svg?branch=main)
+![example workflow](https://github.com/localagi/AGiXT-docker/actions/workflows/publish-docker-test.yml/badge.svg?branch=main)
 
 Easy setup. Compatible. Tweakable. Scaleable.
 
