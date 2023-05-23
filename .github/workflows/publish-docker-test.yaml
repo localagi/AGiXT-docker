@@ -1,4 +1,4 @@
-name: Publish Docker images
+name: Publish and test Docker images
 
 permissions:
   packages: write
@@ -16,16 +16,23 @@ on:
 jobs:
 
   build-agixt:
-    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@v2
+    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@main
     with:
-      registry-repo-name: agixt
+      registry-repo-name: AGiXT
       context-repository: Josh-XT/AGiXT
       context-repository-ref: ${{ github.ref }}
-      registry-readme: README.docker.md
       tags: |
         type=schedule
         type=ref,event=branch
         type=semver,pattern={{version}}
 #      platforms: linux/amd64,linux/arm64/v8
-      cache-from: ${{ null }}
     secrets: inherit
+    
+  test-agixt:
+    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-test-with-jupyter.yml@main
+    with:
+      image: ${{ needs.build-agixt.outputs.primary-image }}
+      port: "7437" 
+      additional-python-dependencies: requests
+    secrets: inherit
+    needs: build-agixt
