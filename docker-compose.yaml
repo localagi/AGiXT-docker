@@ -10,4 +10,3 @@ services:
       - ./data/agents:/agixt/agents:rw
       - ./data/workspace:/agixt/WORKSPACE:rw
       - ./models:/model:rw
-    profiles: ["all","streamlit"]

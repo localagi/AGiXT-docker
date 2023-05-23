@@ -23,9 +23,8 @@ See [Releases](../../releases)
 ## Run
 
 * get `docker-compose.yml` (clone repo, copy or else) 
-* Run `docker compose --profile all up`
-* open/refresh `http://localhost:8501` (streamlit)
-* open/refresh `http://localhost:3000` (frontend)
+* Run `docker compose`
+* open/refresh `http://localhost:8501` 
 
 ### Runtime options
 Environment variables to set for the specific service
@@ -34,10 +33,10 @@ Environment variables to set for the specific service
 Prepend, e.g. `AGiXT_VERSION=1.1.57-beta`
 
 ### Get the latest builds / update
-`docker compose --profile all pull`
+`docker compose pull`
 
 ### Cleanup
-`docker compose --profile all rm`
+`docker compose rm`
 
 ## Run a dev environment
 
@@ -46,7 +45,7 @@ Use `docker-compose.dev.yaml` as an additon to
 * automatically restart the container on error
 
 
-Run `docker compose -f docker-compose.yaml -f docker-compose.dev.yaml --profile all up`
+Run `docker compose -f docker-compose.yaml -f docker-compose.dev.yaml up`
 
 ## Contributing
 
