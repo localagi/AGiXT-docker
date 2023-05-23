@@ -34,10 +34,10 @@ Environment variables to set for the specific service
 Prepend, e.g. `AGiXT_VERSION=1.1.57-beta`
 
 ### Get the latest builds / update
-`docker compose pull`
+`docker compose --profile all pull`
 
 ### Cleanup
-`docker compose rm`
+`docker compose --profile all rm`
 
 ## Run a dev environment
 
