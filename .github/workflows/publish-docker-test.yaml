@@ -5,8 +5,6 @@ permissions:
   contents: read
   
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: ["main"]
   release:
@@ -16,7 +14,7 @@ on:
 jobs:
 
   build-agixt:
-    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@main
+    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@v3
     with:
       registry-repo-name: AGiXT
       context-repository: Josh-XT/AGiXT
@@ -25,7 +23,7 @@ jobs:
         type=schedule
         type=ref,event=branch
         type=semver,pattern={{version}}
-      platforms: linux/amd64,linux/arm64/v8
+      #platforms: linux/amd64,linux/arm64/v8
     secrets: inherit
     
   test-agixt:

@@ -7,7 +7,7 @@ Sophisticated docker builds for parent project [Josh-XT/AGiXT](https://github.co
 Easy setup. Compatible. Tweakable. Scaleable.
 
 #### Supported platforms
-`amd64`, `arm64`
+`amd64`, ~~`arm64`~~
 
 #### Supported versions
 Containers follow the version scheme of the parent project
