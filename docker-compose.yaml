@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   agixt:
-    image: localagi/agixt:main
+    image: localagi/agixt:${AGiXT_VERSION:-main}
     entrypoint: [ "streamlit", "run", "Main.py" ]
     init: true
     ports:
