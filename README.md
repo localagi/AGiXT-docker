@@ -6,6 +6,11 @@ Sophisticated docker builds for parent project [Josh-XT/AGiXT](https://github.co
 
 Easy setup. Compatible. Tweakable. Scaleable.
 
+Status what's been transferred already
+- [ x ] poetry migration
+- [ x ] Dockerfile and docker compose updates
+- [  ] Testing with jupyter 
+
 #### Supported platforms
 `amd64`, ~~`arm64`~~
 
