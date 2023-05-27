@@ -26,9 +26,6 @@ COPY pyproject.toml poetry.lock .
 RUN poetry install --no-root --with gpt4free
 COPY --link . .
 
-ENV PATH="/usr/local/bin:$PATH"
-ENV LD_PRELOAD=libgomp.so.1
-
 WORKDIR /agixt/agixt
 ENTRYPOINT ["poetry", "run", "uvicorn", "app:app"]
 CMD ["--host", "0.0.0.0", "--port", "7437"]
