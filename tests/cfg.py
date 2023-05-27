@@ -33,11 +33,7 @@ cfg = {
 
 "message-1": "Write a short text about AI suitable for a tweet.",
 "message-2": "Hi! Can you write me a short story about the sun and the clouds?",
-"message-3": "What is the capital of france?",
-
-
-"prompt_name": "ci_prompt",
-"prompt": "What is the capital of France?"
+"message-3": "What is the capital of france?"
 
 }
 
