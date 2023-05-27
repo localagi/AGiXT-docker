@@ -14,7 +14,7 @@ on:
 jobs:
 
   build-agixt:
-    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-docker-build-publish.yml@v3
+    uses: localagi/AI-pipeline/.github/workflows/operation-docker-build-publish.yml@v3
     with:
       registry-repo-name: AGiXT
       context-repository: Josh-XT/AGiXT
@@ -27,10 +27,11 @@ jobs:
     secrets: inherit
     
   test-agixt:
-    uses: localagi/ai-dedicated-workflows/.github/workflows/operation-test-with-jupyter.yml@main
+    uses: localagi/AI-pipeline/.github/workflows/operation-test-with-jupyter.yml@main
     with:
       image: ${{ needs.build-agixt.outputs.primary-image }}
       port: "7437" 
       additional-python-dependencies: requests
-    secrets: inherit
+    secrets:
+      api-key: ${{ secrets.OPENAI_API_KEY }}
     needs: build-agixt

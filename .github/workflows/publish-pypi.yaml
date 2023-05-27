@@ -1,0 +1,16 @@
+name: Publish python package
+
+on:
+  push:
+  release:
+    types: [published]
+  workflow_dispatch:
+  
+jobs:
+
+  build-agixt-pypi:
+    uses: localagi/AI-pipeline/.github/workflows/operation-python-build-publish.yml@main
+    with:
+      source-repo: localAGI/AGiXT
+      source-branch: build-localagi
+    secrets: inherit
