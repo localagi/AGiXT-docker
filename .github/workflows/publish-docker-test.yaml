@@ -17,7 +17,7 @@ jobs:
     uses: localagi/AI-pipeline/.github/workflows/operation-docker-build-publish.yml@v3
     with:
       registry-repo-name: AGiXT
-      context-repository: Josh-XT/AGiXT
+      context-repository: localagi/AGiXT
       context-repository-ref: ${{ github.ref }}
       tags: |
         type=schedule
