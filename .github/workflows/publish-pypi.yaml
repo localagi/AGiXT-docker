@@ -1,7 +1,6 @@
 name: Publish python package
 
 on:
-  push:
   release:
     types: [published]
   workflow_dispatch:

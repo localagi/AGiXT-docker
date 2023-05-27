@@ -18,7 +18,7 @@ jobs:
     with:
       registry-repo-name: AGiXT
       context-repository: localagi/AGiXT
-      context-repository-ref: ${{ github.ref }}
+      context-repository-ref: build-localagi
       tags: |
         type=schedule
         type=ref,event=branch
@@ -29,6 +29,7 @@ jobs:
   test-agixt:
     uses: localagi/AI-pipeline/.github/workflows/operation-test-with-jupyter.yml@main
     with:
+      notebook: tests/quickchecks.ipynb
       image: ${{ needs.build-agixt.outputs.primary-image }}
       port: "7437" 
       additional-python-dependencies: requests
